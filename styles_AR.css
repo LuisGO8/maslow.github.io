@@ -11,8 +11,8 @@ body {
 }
 
 .realidad-aumentada {
-    width: 100%;
-    max-width: 900px;
+    width: 90%;           /* menos ancho para móviles */
+    max-width: 500px;     /* límite de ancho */
     margin: 0 auto;
 }
 
@@ -22,10 +22,8 @@ body {
 
 a-scene {
     width: 100%;
-    height: 80vh; 
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
+    height: 60vh;         /* más pequeño que antes */
+    border-radius: 10px;
 }
 
 video {

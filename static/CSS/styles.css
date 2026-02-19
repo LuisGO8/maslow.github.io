@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    pointer-events: none; /* Permite hacer clic a través del div */
+}
+
+#ui-layer h1 {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+}
+
+#ui-layer p {
+    margin: 0;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#info-box {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 30, 30, 0.85);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: background 0.4s ease;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+#credits {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    z-index: 10;
+    text-shadow: 1px 1px 2px black;
+    pointer-events: none;
+}

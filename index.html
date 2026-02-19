@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Fundamentos de Economía en AR</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+
+    <div id="ui-layer">
+        <h1>Conceptos Económicos AR</h1>
+        <p>Apunta la cámara a los marcadores (Hiro / Kanji) y toca los objetos.</p>
+    </div>
+
+    <div id="info-box">Selecciona un elemento en pantalla para ver su definición.</div>
+
+    <div id="credits">
+        Desarrollado por: José Luis Guizar Ortega, Isaac Carbajal Chimal, Leonardo Maldonado Alcalá y Arturo Marmolejo
+        Barajas
+    </div>
+
+    <a-scene embedded
+        arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+
+        <a-marker preset="hiro">
+            <!-- Contenedor general vertical -->
+            <a-entity rotation="-90 0 0" position="0 1 0">
+                <!-- Fondo tipo panel -->
+                <a-plane position="0 0 0" width="4" height="3" color="#ffffff"></a-plane>
+                <!-- Título -->
+                <a-text value="Flujo Circular de la Economia" position="-1.8 1.2 0.01" color="black"
+                    scale="0.8 0.8 0.8">
+                </a-text>
+                <!-- Familias -->
+                <a-cylinder position="-1.5 0 0.05" radius="0.3" height="0.8" color="#4CAF50">
+                </a-cylinder>
+                <a-text value="Familias" position="-1.9 -0.6 0.06" color="black" scale="0.6 0.6 0.6">
+                </a-text>
+                <!-- Empresas -->
+                <a-box position="1.5 0 0.05" depth="0.8" height="0.8" width="0.8" color="#2196F3">
+                </a-box>
+                <a-text value="Empresas" position="1.1 -0.6 0.06" color="black" scale="0.6 0.6 0.6">
+                </a-text>
+                <!-- Flecha superior (Bienes y Servicios) -->
+                <a-torus position="0 0.7 0.05" radius="1.5" radius-tubular="0.03" arc="180" rotation="0 0 0"
+                    color="#FF9800">
+                </a-torus>
+                <a-text value="Bienes y Servicios" position="-0.8 0.9 0.06" color="#FF9800" scale="0.5 0.5 0.5">
+                </a-text>
+                <!-- Flecha inferior (Dinero) -->
+                <a-torus position="0 -0.7 0.05" radius="1.5" radius-tubular="0.03" arc="180" rotation="0 0 180"
+                    color="#9C27B0">
+                </a-torus>
+                <a-text value="Dinero (Salarios y Pagos)" position="-1 -1 0.06" color="#9C27B0" scale="0.5 0.5 0.5">
+                </a-text>
+                <!-- Animación general -->
+                <a-entity animation="property: rotation; to: 0 0 360; loop: true; dur: 15000">
+                </a-entity>
+            </a-entity>
+        </a-marker>
+
+
+
+        <a-marker preset="kanji">
+            <a-box id="obj-satisfactor" position="-0.8 0.5 0" width="0.8" height="0.8" depth="0.8" color="#FFC65D"
+                animation="property: position; dir: alternate; dur: 2000; to: -0.8 0.8 0; loop: true"></a-box>
+            <a-text value="Satisfactor" position="-1.2 1.5 0" color="orange" scale="0.8 0.8 0.8"></a-text>
+
+            <a-entity id="obj-costo" position="0.8 0.5 0">
+                <a-sphere position="-0.3 0 0" radius="0.3" color="#4CC3D9"></a-sphere>
+                <a-sphere position="0.3 0 0" radius="0.3" color="#999999" opacity="0.5"></a-sphere>
+            </a-entity>
+            <a-text value="Costo Oportunidad" position="0.2 1.5 0" color="teal" scale="0.7 0.7 0.7"></a-text>
+        </a-marker>
+
+        <a-entity camera>
+            <a-entity cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+        </a-entity>
+    </a-scene>
+
+    <script src="logic.js"></script>
+</body>
+
+</html>
